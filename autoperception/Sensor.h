@@ -2,37 +2,31 @@
 #define SENSOR_H
 
 #include "Vec2.h"
-#include <iostream>
-
-static int nextId;
-static int count;
+#include <string>
 
 class Sensor{
 
     public:
-    Sensor(std::string name, Vec2& position);
-    ~Sensor();              //virtual destructor 
-
+    Sensor(const std::string& name, const Vec2& position);
+    virtual ~Sensor();              //virtual destructor 
 
     //getters
     std::string getName() const;
     Vec2 getPosition() const;
     int getId() const;
 
-
     void printInfo();
-
-    //virtual function makes this now abstract
-    virtual void scan() const = 0; 
-
     
+    virtual void scan() const = 0;              //virtual function makes this now abstract
 
-    private: 
+    static int getCount();
 
     protected:
-    std::string FrontLidar;
+    std::string name;
     Vec2 position;
     int id;
+    static int nextId;
+    static int count;
 
 
 

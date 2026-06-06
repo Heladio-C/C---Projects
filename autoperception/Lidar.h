@@ -7,6 +7,8 @@ class Lidar : public Sensor{
     public:
     Lidar(const std::string& name, const Vec2& position, double range);
 
+    void scan() const override;
+
     private:
     double range;
 };
