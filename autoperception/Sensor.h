@@ -15,7 +15,7 @@ class Sensor{
     Vec2 getPosition() const;
     int getId() const;
 
-    void printInfo();
+    void printInfo() const;
     
     virtual void scan() const = 0;              //virtual function makes this now abstract
 

@@ -9,6 +9,8 @@ class Lidar : public Sensor{
 
     void scan() const override;
 
+    double getRange() const;
+
     private:
     double range;
 };

@@ -1,18 +1,17 @@
-#include "Vec2.h"
+#include "Sensor.h"
+#include "Lidar.h"
 #include <iostream>
 using namespace std;
 
 int main(){
-    Vec2 origin;
+    
+    Lidar frontLidar("Front Lidar" , Vec2(2.5, 0.0), 80);
 
-    Vec2 point1(3.0,4.0);
+    frontLidar.printInfo();
+    frontLidar.scan();
 
-    cout << "Point P = ";
-    point1.print();
-    cout << endl;
-
-    cout << "Magnitdue of p = " << point1.magnitude() << endl;
-    cout << "Distance from origin to point 1: " << origin.distanceTo(point1) << endl;
+    cout << "Via base class pointer (polymorphism)" << endl;
+    
 
 
     return 0;
