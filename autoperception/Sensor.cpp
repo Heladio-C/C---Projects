@@ -1,13 +1,12 @@
 #include "Sensor.h"
 #include <iostream>
-
 using namespace std;
 
 int Sensor::nextId = 1000;
 int Sensor::count = 0;
 
 
-Sensor::Sensor(const std::string& name, const Vec2& position) : name(name), position(position), id(++nextId){
+Sensor::Sensor(const std::string& name, const Vec2& position) : name(name), position(position), id(nextId++){
     ++count;
 }
 
